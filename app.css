@@ -1,0 +1,65 @@
+body {
+    background-color: rgb(17, 26, 34);
+}
+
+#date { 
+    background: #fe921f; 
+    color: #ffffff; 
+    display: inline-block; 
+    font-family: 'Lato', sans-serif; 
+    font-size: 12px; f
+    ont-weight: bold; 
+    line-height: 12px; 
+    letter-spacing: 1px; 
+    margin: 0 0 30px; 
+    padding: 10px 15px 8px;
+}
+
+#monthAndYear {
+    color: #ffffff; 
+    font-family: 'Lato', sans-serif; 
+    font-size: 54px; 
+    font-weight: 300; 
+    line-height: 58px; 
+    margin: 0 0 58px; 
+}
+
+#calendar {
+    color: #adb7bd; 
+    font-size: 20px; 
+    line-height: 26px;  
+    margin: 15px; 
+    
+}
+
+#previous {
+    float: left;
+    color: #45494b; 
+    font-size: 20px; 
+    line-height: 26px; 
+    
+    margin: 0;
+    
+}
+
+#next {
+    float: right;
+    color: #45494b; 
+    font-size: 20px; 
+    line-height: 26px; 
+    
+    margin: 0;
+    
+}
+
+
+label { 
+    color: #adb7bd; 
+    font-family: 'Lucida Sans', 
+    Arial, sans-serif; 
+    
+}
+
+body {
+    font-family: 'Lucida Sans', Arial, sans-serif
+}
