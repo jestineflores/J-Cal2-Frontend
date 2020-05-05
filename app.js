@@ -60,6 +60,7 @@ function showCalendar(month, year) {
         for (let j = 0; j < 7; j++) {
             if (i === 0 && j < firstDay) {
                 let cell = document.createElement("td");
+                cell.onclick = () => console.log("Whatever"); //update
                 let cellText = document.createTextNode("");
                 cell.appendChild(cellText);
                 row.appendChild(cell);
@@ -70,6 +71,7 @@ function showCalendar(month, year) {
 
             else {
                 let cell = document.createElement("td");
+                cell.onclick = () => console.log("Whatever"); //update
                 let cellText = document.createTextNode(date);
                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     cell.classList.add("bg-info");
