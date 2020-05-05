@@ -1,4 +1,4 @@
-n =  new Date();
+n = new Date();
 y = n.getFullYear();
 m = n.getMonth() + 1;
 d = n.getDate();
@@ -60,18 +60,15 @@ function showCalendar(month, year) {
         for (let j = 0; j < 7; j++) {
             if (i === 0 && j < firstDay) {
                 let cell = document.createElement("td");
-                cell.onclick = () => console.log("Whatever"); //update
+                cell.onclick = () => console.log("Clicked"); //update
                 let cellText = document.createTextNode("");
                 cell.appendChild(cellText);
                 row.appendChild(cell);
-            }
-            else if (date > daysInMonth) {
+            } else if (date > daysInMonth) {
                 break;
-            }
-
-            else {
+            } else {
                 let cell = document.createElement("td");
-                cell.onclick = () => console.log("Whatever"); //update
+                cell.onclick = () => console.log("Clicked"); //update
                 let cellText = document.createTextNode(date);
                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     cell.classList.add("bg-info");
