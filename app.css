@@ -11,7 +11,8 @@ body {
 
 td {
   text-align: center;
-  border: 1px solid;
+  border: 2px solid;
+  border-color: #fe921f
 }
 
 
@@ -40,7 +41,7 @@ td {
 #calendar {
     color: #adb7bd;
     font-size: 20px;
-    line-height: 26px;
+    line-height: 76px;
     margin: 15px;
 }
 
