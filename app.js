@@ -17,6 +17,87 @@ let monthAndYear = document.getElementById("monthAndYear");
 showCalendar(currentMonth, currentYear);
 
 
+
+const handleSubmitClicked = (payload) => {
+  // TODO: Call the back end passing in the following values
+  const {month, year, startDay, nameVal, locationVal, startVal, endVal} = payload;
+  console.log("submit clicked");
+}
+
+const displayEventForm = (month, year, startDay) => {
+
+  let eventInputWithLabel = renderInputWithLabel("Event Name");
+  let locationInputWithLabel = renderInputWithLabel("Event Location Name");
+  let startTimeInputWithLabel = renderInputWithLabel("Start");
+  let endTimeInputWithLabel = renderInputWithLabel("End");
+  let submit = renderButtonWithCallback(() => {
+    let name = eventInputWithLabel.input;
+    let location = locationInputWithLabel.input;
+    let startTime = startTimeInputWithLabel.input;
+    let endTime = endTimeInputWithLabel.input;
+    let nameVal = name.value();
+    let locationVal = name.value();
+    let startVal = name.value();
+    let endVal = name.value();
+    if (!validateFormParams(nameVal, locationVal, startVal, endVal)) return;
+    let payload = {month, year, startDay, nameVal, locationVal, startVal, endVal};
+    handleSubmitClicked(payload);
+  });
+
+  let exit = renderButtonWithCallback(() => {
+    hideEventForm();
+  });
+
+  let buttonsDiv = document.createElement("div");
+  buttonsDiv.setAttribute("class", "event-form-buttons");
+  buttonsDiv.appendChild(submit);
+  buttonsDiv.appendChild(exit);
+
+  let div = document.createElement("div");
+  div.setAttribute("class", "new-event-form");
+  div.appendChild(eventInputWithLabel.div);
+  div.appendChild(locationInputWithLabel.div);
+  div.appendChild(startTimeInputWithLabel.div);
+  div.appendChild(endTimeInputWithLabel.div);
+  div.appendChild(buttonsDiv);
+
+  document.body.appendChild(div);
+}
+
+const validateFormParams = (nameVal, locationVal, startVal, endVal) => {
+  if (nameVal == "" || nameVal == null
+    || locationVal == "" || locationVal == null
+    || startVal == "" || startVal == null
+    || endVal == "" || endVal == null) {
+    return false;
+  }
+}
+
+const renderInputWithLabel = (label) => {
+  const div = document.createElement("div");
+  div.setAttribute("class", "input-with-label");
+  let input = document.createElement("input");
+  let span = document.createElement("span");
+  console.log(span);
+  console.log(input);
+  span.innerHTML = label;
+  div.appendChild(span);
+  div.appendChild(input);
+  return {div, input};
+}
+
+const renderButtonWithCallback = (callback) => {
+  let btn = document.createElement("button");
+  btn.onclick = callback;
+  return btn;
+}
+
+
+
+
+
+
+
 function next() {
     currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
     currentMonth = (currentMonth + 1) % 12;
@@ -60,7 +141,6 @@ function showCalendar(month, year) {
         for (let j = 0; j < 7; j++) {
             if (i === 0 && j < firstDay) {
                 let cell = document.createElement("td");
-                cell.onclick = () => console.log("Clicked"); //update
                 let cellText = document.createTextNode("");
                 cell.appendChild(cellText);
                 row.appendChild(cell);
@@ -68,7 +148,7 @@ function showCalendar(month, year) {
                 break;
             } else {
                 let cell = document.createElement("td");
-                cell.onclick = () => console.log("Clicked"); //update
+                cell.onclick = () => displayEventForm(date);
                 let cellText = document.createTextNode(date);
                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     cell.classList.add("bg-info");

@@ -7,13 +7,12 @@ body {
 
 .table {
     width: 80vw;
-    table-layout: fixed;
+    table-layout: fixed
 }
 
 td {
     text-align: center;
     border: 1px solid;
-    border-color: #fe921f;
 }
 
 #date {
@@ -68,4 +67,28 @@ label {
 
 body {
     font-family: 'Lucida Sans', Arial, sans-serif
+}
+
+.new-event-form {
+  color: black;
+  position: absolute;
+  height: 70vh;
+  width: 50vw;
+  z-index: 200; // arbitrarily high value
+  display: flex;
+  flex-direction: column;
+  margin: 15vh 25vw 15vh 25vw;
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.input-with-label {
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
