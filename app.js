@@ -27,7 +27,7 @@ const handleSubmitClicked = (payload) => {
 const displayEventForm = (month, year, startDay) => {
 
   let eventInputWithLabel = renderInputWithLabel("Event Name");
-  let locationInputWithLabel = renderInputWithLabel("Event Location Name");
+  let locationInputWithLabel = renderInputWithLabel("Event Location");
   let startTimeInputWithLabel = renderInputWithLabel("Start");
   let endTimeInputWithLabel = renderInputWithLabel("End");
   let submit = renderButtonWithCallback(() => {
@@ -36,9 +36,9 @@ const displayEventForm = (month, year, startDay) => {
     let startTime = startTimeInputWithLabel.input;
     let endTime = endTimeInputWithLabel.input;
     let nameVal = name.value();
-    let locationVal = name.value();
-    let startVal = name.value();
-    let endVal = name.value();
+    let locationVal = location.value();
+    let startVal = start.value();
+    let endVal = end.value();
     if (!validateFormParams(nameVal, locationVal, startVal, endVal)) return;
     let payload = {month, year, startDay, nameVal, locationVal, startVal, endVal};
     handleSubmitClicked(payload);
