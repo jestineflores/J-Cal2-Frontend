@@ -22,7 +22,7 @@ const handleSubmitClicked = (payload) => {
     postData('http://localhost:3000/events', payload)
         .then(response => {
             alert("Event Created");
-            showCalendar();
+            showCalendar(currentMonth, currentYear);
         });
 }
 
@@ -42,10 +42,13 @@ const displayEventForm = (month, year, startDay) => {
                     let locationVal = location.value;
                     let startVal = startInput.value;
                     let endVal = endInput.value;
-                    if (!validateFormParams(nameVal, locationVal, startVal, endVal)) return;
+                    if (validateFormParams(nameVal, locationVal, startVal, endVal) == false) {
+                      alert("Error Please Check Your Values.")
+                      return;
+                    }
                     startTime = `${year}-${month}-${startDay > 9 ? startDay : `0${startDay}`} ${startVal}`;
     endTime = `${year}-${month}-${startDay > 9 ? startDay : `0${startDay}`} ${endVal}`;
-    let payload = {month, year, startDay, nameVal, locationVal, startTime, endTime}; 
+    let payload = {month, year, startDay, nameVal, locationVal, startTime, endTime};
     // TODO: IMPLEMENT THIS
     // MAKE SURE YEAR MONTH DAY are correct
     console.log("payload");
@@ -115,8 +118,8 @@ const renderButtonWithCallback = (label, callback) => {
   btn.value = label;
   btn.onclick = callback;
   return btn;
-}
 
+}
 
 function next() {
     currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
