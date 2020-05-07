@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     body {
         background-color: rgb(17, 26, 34);
         color: white;
@@ -92,3 +93,117 @@
         justify-content: flex-start;
         align-items: center;
     }
+=======
+body {
+    background-color: rgb(17, 26, 34);
+    color: white;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.table {
+    width: 80vw;
+    table-layout: fixed;
+}
+
+td {
+    text-align: center;
+    border: 1px solid;
+    border-color: #fe921f;
+}
+
+#date {
+    background: #fe921f;
+    color: #ffffff;
+    display: inline-block;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 12px;
+    letter-spacing: 1px;
+    margin: 0 0 30px;
+    padding: 10px 15px 8px;
+}
+
+#monthAndYear {
+    color: #ffffff;
+    font-family: 'Lato', sans-serif;
+    font-size: 54px;
+    font-weight: 300;
+    line-height: 58px;
+    margin: 0 0 58px;
+}
+
+#calendar {
+    color: #adb7bd;
+    font-size: 20px;
+    line-height: 76px;
+    margin: 15px;
+}
+
+#previous {
+    float: left;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+
+    cursor: pointer;
+}
+
+#next {
+    float: right;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+label {
+    color: #adb7bd;
+    font-family: 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    font-family: 'Lucida Sans', Arial, sans-serif
+}
+
+.new-event-form {
+    color: white;
+    font-family: 'Lucida Sans', Arial, sans-serif;
+    position: center;
+    height: 70vh;
+    /* width: 50vw; */
+    z-index: 200; /* arbitrarily high value */
+    display: flex;
+    flex-direction: column;
+    margin: 10vh 25vw 10vh 25vw;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid #2ecc71;
+    border-radius: 24px;
+}
+
+.input-with-label {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+>>>>>>> 13faef6d4d926847c264e429e5e4fe3954bb31bd
