@@ -19,7 +19,17 @@ showCalendar(currentMonth, currentYear);
 
 
 const handleSubmitClicked = (payload) => {
-  // TODO: Call the back end passing in the following values
+  fetch('http://localhost:3000/events')
+    .then(response => response.json())
+    .then(events => displayEvents(events))
+
+    function displayEvents(events) {
+        events.forEach(event => {
+            const h2 = document.createElement('h2')
+            h2.innerText = event.event + ' | ' + event.location + ' | ' + event.start_time + ' | ' + event.end_time
+            document.body.append(h2)
+        })
+    }   
   const {month, year, startDay, nameVal, locationVal, startVal, endVal} = payload;
   console.log("submit clicked");
 }
@@ -91,11 +101,6 @@ const renderButtonWithCallback = (callback) => {
   btn.onclick = callback;
   return btn;
 }
-
-
-
-
-
 
 
 function next() {

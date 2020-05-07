@@ -47,18 +47,33 @@ td {
 
 #previous {
     float: left;
-    color: #45494b;
-    font-size: 20px;
-    line-height: 26px;
-    margin: 0;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+
+    cursor: pointer;
 }
 
 #next {
     float: right;
-    color: #45494b;
-    font-size: 20px;
-    line-height: 26px;
-    margin: 0;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    cursor: pointer;
 }
 
 label {
@@ -71,25 +86,27 @@ body {
 }
 
 .new-event-form {
-  color: black;
-  position: absolute;
-  height: 70vh;
-  width: 50vw;
-  z-index: 200; // arbitrarily high value
-  display: flex;
-  flex-direction: column;
-  margin: 15vh 25vw 15vh 25vw;
-  background-color: #fff;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+    color: white;
+    font-family: 'Lucida Sans', Arial, sans-serif;
+    position: center;
+    height: 70vh;
+    /* width: 50vw; */
+    z-index: 200; /* arbitrarily high value */
+    display: flex;
+    flex-direction: column;
+    margin: 10vh 25vw 10vh 25vw;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid #2ecc71;
+    border-radius: 24px;
 }
 
 .input-with-label {
-  display:flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
