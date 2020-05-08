@@ -4,7 +4,7 @@
         margin-left: 10vw;
         margin-right: 10vw;
     }
-    
+
     .table {
         width: 80vw;
         table-layout: fixed;
@@ -15,7 +15,7 @@
         border: 1px solid;
         border-color: #fe921f;
     }
-    
+
     #date {
         background: #fe921f;
         color: #ffffff;
@@ -28,7 +28,7 @@
         margin: 0 0 30px;
         padding: 10px 15px 8px;
     }
-    
+
     #monthAndYear {
         color: #ffffff;
         font-family: 'Lato', sans-serif;
@@ -37,14 +37,14 @@
         line-height: 58px;
         margin: 0 0 58px;
     }
-    
+
     #calendar {
         color: #adb7bd;
         font-size: 20px;
         line-height: 76px;
         margin: 15px;
     }
-    
+
     #previous {
         float: left;
         border: 0;
@@ -60,7 +60,7 @@
 
     cursor: pointer;
     }
-    
+
     #next {
         float: right;
         border: 0;
@@ -75,16 +75,16 @@
         border-radius: 24px;
         cursor: pointer;
     }
-    
+
     label {
         color: #adb7bd;
         font-family: 'Lucida Sans', Arial, sans-serif;
     }
-    
+
     body {
         font-family: 'Lucida Sans', Arial, sans-serif
     }
-    
+
     .new-event-form {
         color: white;
         font-family: 'Lucida Sans', Arial, sans-serif;
@@ -103,7 +103,7 @@
         border: 2px solid #2ecc71;
         border-radius: 24px;
     }
-    
+
     .input-with-label {
         display: flex;
         flex-direction: row;

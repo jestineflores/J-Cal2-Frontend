@@ -17,23 +17,22 @@ let monthAndYear = document.getElementById("monthAndYear");
 showCalendar(currentMonth, currentYear);
 
 const handleSubmitClicked = (payload) => {
-    console.log("Handle Submit Clicked");
+    // console.log("Handle Submit Clicked");
     console.log(payload);
     postData('http://localhost:3000/events', payload)
         .then(response => {
-            alert("Event Created");
+            alert("Event Created! ");
             showCalendar(currentMonth, currentYear);
         });
 }
 
 const displayEventForm = (month, year, startDay) => {
 
-        let eventInputWithLabel = renderInputWithLabel("Event Name");
-        let locationInputWithLabel = renderInputWithLabel("Event Location");
-        let startTimeInputWithLabel = renderInputWithLabel("Start", { "type": "time" });
-        let endTimeInputWithLabel = renderInputWithLabel("End", { "type": "time" });
-        let submit = renderButtonWithCallback("Submit", () => {
-                    console.log("Button Clicked")
+        let eventInputWithLabel = renderInputWithLabel("Event Name: ");
+        let locationInputWithLabel = renderInputWithLabel("Event Location: ");
+        let startTimeInputWithLabel = renderInputWithLabel("Start: ", { "type": "time" });
+        let endTimeInputWithLabel = renderInputWithLabel("End: ", { "type": "time" });
+        let submit = renderButtonWithCallback("Submit: ", () => {
                     let name = eventInputWithLabel.input;
                     let location = locationInputWithLabel.input;
                     let startInput = startTimeInputWithLabel.input;
@@ -48,10 +47,9 @@ const displayEventForm = (month, year, startDay) => {
                     }
                     startTime = `${year}-${month}-${startDay > 9 ? startDay : `0${startDay}`} ${startVal}`;
     endTime = `${year}-${month}-${startDay > 9 ? startDay : `0${startDay}`} ${endVal}`;
-    let payload = {month, year, startDay, nameVal, locationVal, startTime, endTime};
+    let payload = {nameVal, locationVal, startTime, endTime};
     // TODO: IMPLEMENT THIS
     // MAKE SURE YEAR MONTH DAY are correct
-    console.log("payload");
     // console.log(payload);
     handleSubmitClicked(payload);
     // TODO: COMMENT BACK IN
